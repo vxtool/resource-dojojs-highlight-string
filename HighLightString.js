@@ -17,7 +17,16 @@ define([
         constructor: function( opcoes ){
             lang.mixin( this, opcoes );
 
-         }
+         },
+
+        cssHighlight: function( searchText ){
+            var me = this;
+
+            this.replaceHtml( searchText , function(text) {
+                return '<span class="'+me.cssClass+'">'+text+'</span>';
+            });
+
+        }
     });
 
 });
