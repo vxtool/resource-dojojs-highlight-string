@@ -57,6 +57,15 @@ define([
                 parent.removeChild(currentNode);
             }
         },
+        clear: function(){
+            if(this.cache){
+                domConstruct.place( this.cache , this.searchNode, "after");
+                domConstruct.destroy(this.searchNode);
+
+                this.searchNode = this.cache;
+                this.cache = null; 
+            }
+        },
         cssHighlight: function( searchText ){
             var me = this;
 
