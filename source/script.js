@@ -4,7 +4,7 @@ require([
   'dojo/on',
   'dojo/keys',
   'dojo/dom-attr',
-  './HighLightString',
+  './source/HighLightString.js',
   'dojo/NodeList-manipulate'
 ], function( dom, query, on, keys, domAttr, HighLightString ){
 
