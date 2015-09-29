@@ -8,7 +8,7 @@ require([
   'dojo/NodeList-manipulate'
 ], function( dom, query, on, keys, domAttr, HighLightString ){
 
-  var substituir = new HighLightString({
+  var _replace = new HighLightString({
     // definindo a classe do elemento que envolverá a String
     cssClass: 'resultado_caracteristicas',
     // DOM onde será buscado a String
@@ -18,13 +18,13 @@ require([
   
   query('#botao_pesquisar_caracteristicas').on("click", function(){
     // No evento de clique ele chama a função clear da classe HighLightString para limpar o cache e caso tenha feito alguma busca anteriormente
-    substituir.clear();
+    _replace.clear();
     
     // Pega o valor do input onde foi iserido a string que será buscada
-    var valor_busca = domAttr.get( dom.byId("inp_text_caracteristica") , "value" );
+    var _searchValue = domAttr.get( dom.byId("inp_text_caracteristica") , "value" );
     
     // cria o elemento que destaca a String e faz a busca 
-    substituir.cssHighlight( valor_busca );
+    _replace.cssHighlight( _searchValue );
   });
 
   // Evento caso o usuário não clique no botão e aperte a tecla Enter
@@ -35,12 +35,12 @@ require([
     if(keys.ENTER === charOrCode || keys.NUMPAD_ENTER === charOrCode){
       evt.preventDefault();
       // No evento de clique ele chama a função clear da classe HighLightString para limpar o cache e caso tenha feito alguma busca anteriormente
-      substituir.clear();
+      _replace.clear();
       // Pega o valor do input onde foi iserido a string que será buscada
-      var valor_busca = domAttr.get( dom.byId("inp_text_caracteristica") , "value" );
+      var _searchValue = domAttr.get( dom.byId("inp_text_caracteristica") , "value" );
 
       // cria o elemento que destaca a String e faz a busca 
-      substituir.cssHighlight( valor_busca ); 
+      _replace.cssHighlight( _searchValue ); 
     }
   });
 });
