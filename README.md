@@ -1,1 +1,1 @@
-# resource-dojojs-highlight
+# Resource Dojojs Highlight String
